@@ -33,6 +33,7 @@ class Item extends Component {
                         <h4>{item.category}</h4>
                     </div>
                     <div className='card-footer d-flex justify-content-around'>
+                        <button type='button' className='btn btn-info' onClick={() => window.open(item.link) }>Full View</button>
                         <button type='button' className='btn btn-secondary' onClick={() => navigate('/edit/' + item.id)}>Edit</button>
                         <button type='button' className='btn btn-danger' onClick={() => { onDelete(item.id) }}>Delete</button>
                     </div>

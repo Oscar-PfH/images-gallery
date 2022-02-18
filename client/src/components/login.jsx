@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Login({setIsLogged, setUserName}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -22,6 +22,8 @@ export function Login() {
             if (res.status === 200) {
                 const userData = res.data;
                 if (userData.userpassword === password) {
+                    setIsLogged(true);
+                    setUserName(userData.nickname);
                     navigate('/');
                 }
             }

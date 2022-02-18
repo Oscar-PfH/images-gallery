@@ -11,7 +11,7 @@ export function Search({setImageList}) {
         Axios.get('http://localhost:9000/api/images/imagename/' + input).then((res) => {
             if (res.status === 200) {
                 console.log(res.data);
-                navigate('/' + input);
+                navigate('/search/' + input);
                 setImageList(res.data);
             }
         }).catch((err) => {
